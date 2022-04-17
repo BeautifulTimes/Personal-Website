@@ -336,24 +336,11 @@
           if (0) { // XXX disabled for safety typeof dump == 'function') {
             dump(text + '\n'); // fast, straight to the real console
           } else {
-            console.error(text);
-            console.error(text);
-            console.error(text);
-            console.error(text);
-            console.error(text);
-            console.error(text);
-            console.error(text);
-            console.error(text);
-            console.error(text);
-            console.error(text);
-            console.error(text);
-            console.error(text);
-
+            alert('bugfix')
           }
         },
         canvas: (function() {
           var canvas = document.getElementById('canvas');
-
           // As a default initial behavior, pop up an alert when webgl context is lost. To make your
           // application robust, you may want to override this behavior before shipping!
           // See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
