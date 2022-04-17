@@ -141,6 +141,7 @@
     <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
 
     <script>
+	Error.stackTraceLimit = Infinity;
       // Subtly hint at lack of WebAssembly support (if applicable)
       if (typeof WebAssembly !== 'object') {
           var error_message = "Unsupported browser - please upgrade!\n(WebAssembly support needed)";
