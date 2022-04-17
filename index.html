@@ -396,7 +396,7 @@
             appleWarning = "\n<p>This is a known issue in Safari and Webkit browsers. Please report this issue to Apple.";
         }
 
-        Module.setStatus('Error: ' + event.split('\n')[0] + ' (see JavaScript console for details)' + appleWarning);
+        Module.setStatus('Error: ' + event + ' (see JavaScript console for details)' + appleWarning);
         spinnerElement.style.display = 'none';
         Module.setStatus = function(text) {
           if (text) Module.printErr('[post-exception status] ' + text);
