@@ -1,176 +1,31 @@
-
-
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Evan Zhang's Website">
-<title> About Me </title>
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
-<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.d432e4222814.css" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="/static/codehilite.2a9f9f75dffd.css" />
-<link rel="stylesheet" href="/static/featherlight/featherlight.min.e6d46628fb53.css" />
-<link rel="stylesheet" href="/static/styles.4f779405853d.css" />
-<script data-cfasync=false src="/static/jquery.min.a09e13ee94d5.js"></script>
-<script data-cfasync=false type="text/javascript">
-        function setTheme(theme) {
-            var defaultTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            if (!theme) {
-                theme = defaultTheme;
-            } else if (theme != defaultTheme) {
-                localStorage.setItem('data-theme', theme);
-            } else {
-                localStorage.removeItem('data-theme');
-            }
-            if (theme == 'dark') {
-                $('#theme-toggle').find('i').removeClass('fa-moon').addClass('fa-sun');
-                $(document.body).addClass('dark-mode');
-            } else {
-                $('#theme-toggle').find('i').removeClass('fa-sun').addClass('fa-moon');
-                $(document.body).removeClass('dark-mode');
-            }
-        }
-
-        $(function () {
-            $('#theme-toggle').click(function (ev) {
-                setTheme($(document.body).hasClass('dark-mode') ? 'light' : 'dark');
-            });
-        });
-
-        if (window.matchMedia) {
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {setTheme(null);});
-        }
-    </script>
 <style>
-        html {
-            position: relative;
-            min-height: 100%;
-            overflow-y: scroll;
-        }
-        body {
-            margin-bottom: 130px;
-            background-color: rgba(255, 113, 43, 0.01);
-        }
-        html.with-featherlight {
-            overflow: unset;
-        }
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-        #theme-toggle {
-            position: absolute;
-            top: 0.8rem;
-            right: 0;
-            cursor: pointer;
-        }
-    </style>
-</head>
+table, th, td {
+  border:1px solid black;
+}
+</style>
 <body>
-<nav class="navbar navbar-expand-lg navbar-expand-xl navbar-expand-md navbar-dark bg-dark sticky-top flex-md-column">
-<span id="theme-toggle">
-<i class="fas fa-2x fa-moon navbar-brand link-dark"></i>
-</span>
-<div class="navbar-header">
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainbar">
-<span class="navbar-toggler-icon"></span>
-</button>
-<a class="pl-2 pl-md-0 navbar-brand" href="/"><b>Evan Zhang</b></a>
-</div>
-<div class="collapse navbar-collapse" id="mainbar">
-<ul class="navbar-nav mr-auto">
-<b><a class="nav-item nav-link link-dark" href=/blog/>Blog</a></b>
-<b><a class="nav-item nav-link link-dark" href=/about/>About Me</a></b>
-<b><a class="nav-item nav-link link-dark" href=/projects/>Projects</a></b>
- <b><a class="nav-item nav-link link-dark" href=/resume/>Résumé</a></b>
-<b><a class="nav-item nav-link link-dark" href=/rating/>Rating Predictor</a></b>
-</ul>
-</div>
-</nav>
-<script data-cfasync=false type="text/javascript">
-        setTheme(localStorage.getItem('data-theme'));
-    </script>
-<div class="container">
-<div class="page-header" style="padding-top:2em; margin:auto;">
-<div class="d-flex justify-content-between">
-<h2><b>
-About Me
-</b></h2>
-</div>
-<hr class="mt-0">
-<div class="row flex-sm-row-reverse">
-<div class="col-sm-6 col-md-5 col-lg-3">
-<img class="img-fluid mx-auto d-block pb-4" style="max-width: 80%" src="/assets/Evan.png">
-</div>
-<div class="col-sm-6 col-md-7 col-lg-9" style="font-size: 15px">
-<p>Hi, I'm Evan Zhang!</p>
-<p>Perhaps you know me by my online handle, <a href="https://www.google.com/search?q=Ninjaclasher" rel="nofollow">Ninjaclasher</a>.</p>
-<p>I'm a Software Engineering student at the University of Waterloo, class of 2025. You may be interested in some of my <a href="/projects/">projects</a>, or my <a href="/resume/">résumé</a>.
-<p>Through the University of Waterloo's co-op program, I've had the opportunity to intern at the following companies:</p>
-<ul class="mb-0">
-<li><a href="https://wish.com/" rel="nofollow">Wish</a>, e-commerce: May 2021 &ndash; August 2021</li>
-<li><a href="https://sap.com/" rel="nofollow">SAP</a>, enterprise software solutions: January 2022 &ndash; April 2022</li>
-</ul>
-I'm also looking for Fall 2022 internship opportunities. If you're interested, please <a href="/cdn-cgi/l/email-protection#b5d8d0f5d0c3d4dbcfddd4dbd29bd6d4">contact me</a>.</p>
-<p><s>Many people like to write blogs on their websites. Perhaps I'll start one later when I have some interesting things to share.</s> After three years, I've finally decided to start a blog to share random things. You can access it <a href="/blog/">here</a>.</p>
-<p>Also, here are some "random" links that may be of interest.</p>
-<ul class="list-group w-100 w-lg-50">
-<li class="list-group-item"><a href="/about/contests">Contest History</a></li>
-<li class="list-group-item"><a href="/about/timeline">Programming Timeline</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<footer class="page-footer footer pt-4">
-<div class="container text-center" style="font-size: 1.2rem;">
-<ul class="list-unstyled list-inline text-center">
-<li class="list-inline-item">
-<a title="LinkedIn" href="https://www.linkedin.com/in/ninjaclasher" target="_blank" rel="nofollow noopener noreferrer" class="text-black link-dark">
-<i class="zoom fab fa-linkedin fa-2x px-2"></i>
-</a>
-</li>
-<li class="list-inline-item">
-<a title="Github" href="https://github.com/Ninjaclasher" target="_blank" rel="nofollow noopener noreferrer" class="text-black link-dark">
-<i class="zoom fab fa-github fa-2x px-2"></i>
-</a>
-</li>
-<li class="list-inline-item">
-<a title="Email" href="/cdn-cgi/l/email-protection#28454d684d5e4946524049464f064b49" class="text-black link-dark"><i class="zoom fa fa-envelope fa-2x px-2"></i></a>
-</li>
-<li class="list-inline-item">
-<a title="Résumé" href="/resume/" class="text-black link-dark"><i class="zoom fa fa-file fa-2x px-2"></i></a>
-</li>
-</ul>
-</div>
-<div class="text-center text-secondary" style="font-size: 12px;">
-&copy; 2018 &ndash; 2022 Evan Zhang
-</div>
-<div class="text-center text-secondary" style="font-size: 12px; overflow-x: auto;">
-Available through Tor at <a href="http://evanzhanglvinaengh2az5hcntvolh2tu6rv2rt5pqo2lif7xiacuqid.onion">evanzhanglvinaengh2az5hcntvolh2tu6rv2rt5pqo2lif7xiacuqid.onion</a>.
-</div>
-</footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/static/mathjax_config.70206138b783.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
-<script type="text/javascript">
-        window.reload_mathjax = function () {
-            MathJax.Hub.queue.Push(function () {
-                $('.tex-image').hide();
-                $('.tex-text').show();
-            });
-        };
-        window.reload_mathjax();
-    </script>
-<script src="/static/bootstrap/js/bootstrap.min.f0c2bcf5ef0c.js"></script>
-<script src="/static/featherlight/featherlight.min.d960f115765d.js"></script>
-<script src="/static/main.d41d8cd98f00.js"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6fd24e79aa9654a3","version":"2021.12.0","r":1,"token":"f08a3332ccf94d8dbfc84ce1275b6276","si":100}' crossorigin="anonymous"></script>
+
+<h2>Scoreboard</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td>Test1</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>Test2</td>
+    <td>10</td>
+  </tr>
+</table>
+
 </body>
 </html>
+
+table { width: 500px; }
+.grow { width: 100%; }
