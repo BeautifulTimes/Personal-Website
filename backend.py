@@ -5,7 +5,7 @@ points = 0
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
-ba
+
 class Users(Resource):
     def get(self):
         global points
