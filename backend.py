@@ -5,12 +5,12 @@ points = 0
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
-
+ba
 class Users(Resource):
     def get(self):
         global points
         points = points + 1
-        return { 'hi' } , 200
+        return points , 200
     def post(self):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('userId', required=True)  # add args
