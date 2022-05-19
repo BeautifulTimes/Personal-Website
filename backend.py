@@ -15,8 +15,8 @@ class Users(Resource):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('userId', required=True)  # add args
         args = parser.parse_args()  # parse arguments to dictionary
-
-        print(args['userId'])
+        global points
+        points = 1000
        
     pass
 
