@@ -6,15 +6,18 @@ app = Flask(__name__)
 api = Api(app)
 CORS(app)
 
+dictdata = {}
 class Users(Resource):
     def get(self):
-        global points
+        global points   
         points = points + 1
-        return points , 200
+        return dictdata , 200
     def post(self):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('name')
         args = parser.parse_args()  # parse arguments to dictionary
+        if args['name'] not in dictdata:
+            dictdata[args['name']] = 1
         print(args)
        
     pass
