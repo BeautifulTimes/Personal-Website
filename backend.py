@@ -9,6 +9,7 @@ CORS(app)
 class Users(Resource):
     def get(self):
         global points
+        print(points)
         points = points + 1
         return points , 200
     def post(self):
