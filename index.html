@@ -15,7 +15,6 @@ table, th, td {
 <script>
 function loadPost() {
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
   xhttp.open("POST", "http://68.183.195.190:8000/users", true);
 let data = `{
   "Id": 78912,
