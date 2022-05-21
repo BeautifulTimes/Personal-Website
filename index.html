@@ -7,27 +7,38 @@ table, th, td {
 </style>
 <body>
 <div id="demo">
-<button type="button" onclick="loadXMLDoc()">Change Content</button>
+<button type="button" onclick="loadGet()">Get Request</button>
 </div>
-
+<div id="demo2">
+<button type="button" onclick="loadGet()">Get Request</button>
+</div>
 <script>
-function loadXMLDoc() {
+function loadGet() {
   var xhttp = new XMLHttpRequest();
-	var xhr = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("demo").innerHTML =
       this.responseText;
     }
   };
-  
+  xhttp.open("POST", "http://68.183.195.190:8000/users", true);
+	xhttp.send(JSON.stringify({
+		userId: "12"
+	}));
+}
+</script>
+<script>
+function loadPost() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo2").innerHTML =
+      this.responseText;
+    }
+  };
   xhttp.open("GET", "http://68.183.195.190:8000/users", true);
   xhttp.send();
 
-  xhr.open("POST", "http://68.183.195.190:8000/users", true);
-	xhr.send(JSON.stringify({
-		userId: "12"
-	}));
 }
 </script>
 <h2>Scoreboard</h2>
