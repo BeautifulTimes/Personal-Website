@@ -17,11 +17,9 @@ function loadPost() {
   var xhttp = new XMLHttpRequest();
   xhttp.open("POST", "http://68.183.195.190:8000/users", true);
   xhttp.setRequestHeader('Content-Type', 'application/json');
-
-let data = `{
-  "name": 78912,
-}`;
-	xhttp.send(data);
+xhttp.send(JSON.stringify({
+    name: "tony"
+}));
 }
 </script>
 <script>
