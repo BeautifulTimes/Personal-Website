@@ -9,15 +9,12 @@ CORS(app)
 class Users(Resource):
     def get(self):
         global points
-      #  print(points)
         points = points + 1
         return points , 200
     def post(self):
         parser = reqparse.RequestParser()  # initialize
         args = parser.parse_args()  # parse arguments to dictionary
         print(args)
-        global points
-        points = 1000
        
     pass
 
