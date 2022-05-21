@@ -14,8 +14,8 @@ class Users(Resource):
         return points , 200
     def post(self):
         parser = reqparse.RequestParser()  # initialize
-        parser.add_argument('userId', required=True)  # add args
         args = parser.parse_args()  # parse arguments to dictionary
+        print(args)
         global points
         points = 1000
        
