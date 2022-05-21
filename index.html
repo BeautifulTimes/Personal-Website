@@ -7,13 +7,13 @@ table, th, td {
 </style>
 <body>
 <div id="demo">
-<button type="button" onclick="loadGet()">Post Request</button>
+<button type="button" onclick="loadPost()">Post Request</button>
 </div>
 <div id="demo2">
 <button type="button" onclick="loadGet()">Get Request</button>
 </div>
 <script>
-function loadGet() {
+function loadPost() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
