@@ -33,7 +33,7 @@ class login(Resource):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('user')
         args = parser.parse_args()  # parse arguments to dictionary
-        if args['user'] in userdata:
+        if args['user'] in userdata:    
             return 200
         else:
             return 512
