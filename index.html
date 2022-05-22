@@ -12,13 +12,15 @@ table, th, td {
 <div id="demo2">
 <button type="button" onclick="loadGet()">Get Request</button>
 </div>
+<input id="numb">
+
 <script>
 function loadPost() {
   var xhttp = new XMLHttpRequest();
   xhttp.open("POST", "http://68.183.195.190:8000/users", true);
   xhttp.setRequestHeader('Content-Type', 'application/json');
 xhttp.send(JSON.stringify({
-    name: "tony"
+    name: document.getElementById("numb").value
 }));
 }
 </script>
