@@ -11,7 +11,7 @@ class Users(Resource):
     def get(self):
         global points   
         points = points + 1
-        return dictdata , 200
+        return scoredata , 200
     def post(self):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('username')
