@@ -16,7 +16,6 @@ class Users(Resource):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('username')
         parser.add_argument('value')
-
         args = parser.parse_args()  # parse arguments to dictionary
         if args['username'] in userdata:
             if args['values'] not in scoredata[args['username']]:
@@ -33,19 +32,32 @@ class login(Resource):
         print('running')
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('user')
-        parser.add_argument('password')
         args = parser.parse_args()  # parse arguments to dictionary
-        if args['user'] not in userdata:
-            userdata[args['user']] = args['password']
-            scoredata['user'] = {}
+        if args['user']  in userdata:
             return 200
         else:
             return 512
         print(args)
-       
+    pass
+class register(Resource):
+    def get(self):
+        return userdata , 200
+    def post(self):
+        print('running')
+        parser = reqparse.RequestParser()  # initialize
+        parser.add_argument('user')
+        args = parser.parse_args()  # parse arguments to dictionary
+        if args['user'] not in userdata:
+            userdata[args['user']] = 1
+            scoredata[args['user']] = {}
+            return 200
+        else:
+            return 512
+        print(args)
     pass
 api.add_resource(Users, '/users')  # '/users' is our entry point
 api.add_resource(login, '/login')  # '/users' is our entry point
+api.add_resource(register, '/register')  # '/users' is our entry point
 
 if __name__ == '__main__':
     print("running")
