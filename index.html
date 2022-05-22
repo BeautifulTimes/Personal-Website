@@ -20,18 +20,6 @@ table, th, td {
 <button type="button" onclick="loginScript()">LogIn</button>
 </div>
 <script>
-/*
-function loadPost() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "http://68.183.195.190:8000/users", true);
-  xhttp.setRequestHeader('Content-Type', 'application/json');
-xhttp.send(JSON.stringify({
-    name: document.getElementById("numb").value
-}));
-}
-*/
-</script>
-<script>
 function loadGet() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -55,7 +43,6 @@ xhttp.send(JSON.stringify({
     password: document.getElementById("password").value
 
 }));
-
 }
 </script>
 <h2>Scoreboard</h2>
