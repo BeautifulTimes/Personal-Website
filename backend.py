@@ -38,6 +38,7 @@ class login(Resource):
         if args['user'] not in userdata:
             userdata[args['user']] = args['password']
             scoredata['user'] = {}
+            return 200
         else:
             return 512
         print(args)
