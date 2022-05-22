@@ -36,7 +36,6 @@ class login(Resource):
         if args['user'] in userdata:
             return 200
         else:
-            print("fail")
             return 512
     pass
 class register(Resource):
@@ -52,6 +51,7 @@ class register(Resource):
             scoredata[args['user']] = {}
             return 200
         else:
+            print("fail")
             return 512
         print(args)
     pass
