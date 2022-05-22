@@ -14,6 +14,9 @@ table, th, td {
 <button type="button" onclick="loginScript()">LogIn</button>
 </div>
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+  lmao();
+})
 function loginScript() {
   var xhttp = new XMLHttpRequest();
   xhttp.open("POST", "http://68.183.195.190:8000/login", true);
@@ -22,7 +25,6 @@ function loginScript() {
 		if (this.responseText = "200")
 		{
 			setCookie("username", document.getElementById("username").value, 1) 
-			document.getElementById("demo").innerHTML =getCookie("username")
 
 		}
     }
@@ -54,6 +56,10 @@ function getCookie(cname) {
     }
   }
   return "";
+}
+function lmao()
+{
+			document.getElementById("demo").innerHTML =getCookie("username")
 }
 
 </script>
