@@ -28,17 +28,15 @@ class Users(Resource):
     pass
 class login(Resource):
     def get(self):
-        global points   
-        points = points + 1
-        return dictdata , 200
+        return userdata , 200
     def post(self):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('user')
         parser.add_argument('password')
         args = parser.parse_args()  # parse arguments to dictionary
-        if args['name'] not in dictdata:
-            userdata[args['name']] = args['password']
-            scoredata['name'] = {}
+        if args['user'] not in dictdata:
+            userdata[args['user']] = args['password']
+            scoredata['user'] = {}
         else:
             return 512
         print(args)
