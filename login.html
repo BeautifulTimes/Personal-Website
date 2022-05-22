@@ -25,6 +25,10 @@ function loginScript() {
 			setCookie("username", document.getElementById("username").value, 1) 
 			location.reload();
 		}
+		if (this.responseText = "512")
+		{
+			document.getElementById("warning").innerHTML ="User not registered";
+		}
     }
   };
   xhttp.setRequestHeader('Content-Type', 'application/json');
@@ -68,6 +72,8 @@ function lmao()
 
 </script>
 <div id="demo">
+</div>
+<div id="warning">
 </div>
 </body>
 </html>
