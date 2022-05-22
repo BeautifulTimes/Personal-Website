@@ -23,7 +23,15 @@ xhttp.send(JSON.stringify({
     password: document.getElementById("password").value
 
 }));
+ if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      "good";
+    }
+  };
 }
 </script>
+<div id="demo">
+</div>
+
 </body>
 </html>
