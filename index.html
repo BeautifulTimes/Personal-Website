@@ -13,6 +13,9 @@ table, th, td {
 <button type="button" onclick="loadGet()">Get Request</button>
 </div>
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+  lmao();
+})
 function loadGet() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -24,6 +27,17 @@ function loadGet() {
   xhttp.open("GET", "http://68.183.195.190:8000/login", true);
   xhttp.send();
 
+}
+function lmao()
+{
+	if (getCookie("username") != "")
+	{
+		document.getElementById("loggedin").innerHTML ="Logged in as " + getCookie("username");
+	}
+	else
+	{
+		document.getElementById("loggedin").innerHTML =" You are not logged in";
+	}
 }
 </script>
 <h2>Scoreboard</h2>
@@ -44,7 +58,9 @@ function loadGet() {
 </table>
 <a href="http://68.183.195.190/point1.html">Point 1</a>
 <a href="http://68.183.195.190/login.html">Log In</a>
-
+</script>
+<div id="loggedin">
+</div>
 
 </body>
 </html>
