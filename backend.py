@@ -30,6 +30,7 @@ class login(Resource):
     def get(self):
         return userdata , 200
     def post(self):
+        print('running')
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('user')
         parser.add_argument('password')
