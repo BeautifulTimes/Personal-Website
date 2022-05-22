@@ -35,7 +35,7 @@ class login(Resource):
         parser.add_argument('user')
         parser.add_argument('password')
         args = parser.parse_args()  # parse arguments to dictionary
-        if args['user'] not in dictdata:
+        if args['user'] not in userdata:
             userdata[args['user']] = args['password']
             scoredata['user'] = {}
         else:
