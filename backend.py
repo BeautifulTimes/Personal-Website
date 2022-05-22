@@ -34,11 +34,11 @@ class login(Resource):
         parser.add_argument('user')
         args = parser.parse_args()  # parse arguments to dictionary
         print (userdata)
+        print (args['user'] in userdata)
         if args['user'] in userdata:
             return 200
         else:
             return 512
-        print(args)
     pass
 class register(Resource):
     def get(self):
