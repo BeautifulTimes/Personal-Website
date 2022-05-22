@@ -23,7 +23,7 @@ function loginScript() {
     if (this.readyState == 4 && this.status == 200) {
 				document.getElementById("warning").innerHTML =this.responseText;
 
-		/*if (this.responseText = 200)
+		if (this.responseText == 200)
 		{
 			setCookie("username", document.getElementById("username").value, 1) 
 			document.getElementById("warning").innerHTML ="Succesfully registered";
@@ -32,7 +32,7 @@ function loginScript() {
 		{
 			document.getElementById("warning").innerHTML ="User already registered";
 
-		}*/
+		}
     }
   };
   xhttp.setRequestHeader('Content-Type', 'application/json');

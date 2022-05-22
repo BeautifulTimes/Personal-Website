@@ -46,14 +46,11 @@ class register(Resource):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('user')
         args = parser.parse_args()  # parse arguments to dictionary
-        print (args['user'])
-        print (userdata)
         if args['user'] not in userdata:
             userdata[args['user']] = 1
             scoredata[args['user']] = {}
             return 200
         else:
-            print("fail")
             return 512
         print(args)
     pass
