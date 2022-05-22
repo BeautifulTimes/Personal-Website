@@ -21,14 +21,14 @@ function loginScript() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
 		document.getElementById("warning").innerHTML =this.responseText ;
-		if (this.responseText = "200")
+		if (this.responseText == "200")
 		{
 			setCookie("username", document.getElementById("username").value, 1) 
-		//	location.reload();
+			location.reload();
 		}
-		if (this.responseText = "512")
+		if (this.responseText == "512")
 		{
-			//document.getElementById("warning").innerHTML ="User not registered";
+			document.getElementById("warning").innerHTML ="User not registered";
 		}
     }
   };
