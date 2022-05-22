@@ -59,7 +59,14 @@ function getCookie(cname) {
 }
 function lmao()
 {
-			document.getElementById("demo").innerHTML =getCookie("username")
+	if (getCookie("username") != "")
+	{
+		document.getElementById("demo").innerHTML ="Logged in as " + getCookie("username");
+	}
+	else
+	{
+		document.getElementById("demo").innerHTML =" You are not logged in";
+	}
 }
 
 </script>
