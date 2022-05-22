@@ -33,11 +33,11 @@ class login(Resource):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('user')
         args = parser.parse_args()  # parse arguments to dictionary
-        print (userdata)
-        print (args['user'] in userdata)
+
         if args['user'] in userdata:
             return 200
         else:
+            print("fail")
             return 512
     pass
 class register(Resource):
