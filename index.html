@@ -12,13 +12,6 @@ table, th, td {
 <div id="demo2">
 <button type="button" onclick="loadGet()">Get Request</button>
 </div>
-<label for="username">Username</label><br>
-<input type="text" id="username" name="username"><br>
-<label for="password">Password</label><br>
-<input type="text" id="password" name="password"><br>
-<div id="login">
-<button type="button" onclick="loginScript()">LogIn</button>
-</div>
 <script>
 function loadGet() {
   var xhttp = new XMLHttpRequest();
@@ -31,18 +24,6 @@ function loadGet() {
   xhttp.open("GET", "http://68.183.195.190:8000/login", true);
   xhttp.send();
 
-}
-</script>
-<script>
-function loginScript() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "http://68.183.195.190:8000/login", true);
-  xhttp.setRequestHeader('Content-Type', 'application/json');
-xhttp.send(JSON.stringify({
-    user: document.getElementById("username").value,
-    password: document.getElementById("password").value
-
-}));
 }
 </script>
 <h2>Scoreboard</h2>
