@@ -23,8 +23,6 @@ function loginScript() {
 		{
 			setCookie("username", document.getElementById("username").value, 1) 
 		}
-      document.getElementById("demo").innerHTML =
-      this.responseText;
     }
   };
   xhttp.setRequestHeader('Content-Type', 'application/json');
@@ -55,6 +53,8 @@ function getCookie(cname) {
   }
   return "";
 }
+document.getElementById("demo").innerHTML =getCookie("username")
+
 </script>
 <div id="demo">
 </div>
