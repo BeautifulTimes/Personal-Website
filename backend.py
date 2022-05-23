@@ -19,8 +19,8 @@ class Users(Resource):
         args = parser.parse_args()  # parse arguments to dictionary
         print(args['username'])
         if args['username'] in userdata:
-            if args['values'] not in scoredata[args['username']]:
-                scoredata[args['username']][args['values']] = 1 
+            if args['value'] not in scoredata[args['username']]:
+                scoredata[args['username']][args['value']] = 1 
         else:
             return 512
         print(args)
