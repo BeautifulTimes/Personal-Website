@@ -13,8 +13,6 @@ scoredata = {}
 userdata = {}
 def savedata():
     while 1==1:
-        global userdata
-        global scoredata
         print("looped")
         time.sleep(savetime)
         f = open("savedata.txt","w")
@@ -23,6 +21,8 @@ def savedata():
         f.write(str(scoredata))
         f.close() #to change file access modes
 def readsavedata():
+    global userdata
+    global scoredata
     f = open("savedata.txt", "r")
     userdata = ast.literal_eval(f.readline())
     scoredata = ast.literal_eval(f.readline())
