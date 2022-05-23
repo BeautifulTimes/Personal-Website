@@ -62,7 +62,7 @@ api.add_resource(Users, '/users')  # '/users' is our entry point
 api.add_resource(login, '/login')  # '/users' is our entry point
 api.add_resource(register, '/register')  # '/users' is our entry point
 while 1==1:
-    sleep(1000)
+    time.sleep(1000)
     f = open("myfile.txt","w")
     f.write("Hello \n")
     f.close() #to change file access modes
