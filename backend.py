@@ -23,7 +23,7 @@ class Users(Resource):
                 scoredata[args['username']][args['value']] = 1 
         else:
             return 512
-        print(args)
+        return 200
        
     pass
 class login(Resource):

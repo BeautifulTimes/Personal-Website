@@ -42,7 +42,6 @@ function lmao()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("warning").innerHTML =this.responseText ;
 				if (this.responseText == 200)
 				{
 					document.getElementById("warning").innerHTML ="QR code 1 found";
