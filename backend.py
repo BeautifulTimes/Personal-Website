@@ -1,6 +1,6 @@
 from flask import Flask
 import time
-import _thread
+import threading
 from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
 points = 0
