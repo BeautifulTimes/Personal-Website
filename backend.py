@@ -23,8 +23,7 @@ def savedata():
 def readsavedata():
     f = open("savedata.txt", "r")
     userdata = ast.literal_eval(str(f.readline()))
-    scoredata = 
-    ast.literal_eval(str(f.readline()))
+    scoredata = ast.literal_eval(str(f.readline()))
     f.close()
 class Users(Resource):
     def get(self):
