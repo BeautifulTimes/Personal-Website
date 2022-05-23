@@ -72,7 +72,7 @@ class register(Resource):
 api.add_resource(Users, '/users')  # '/users' is our entry point
 api.add_resource(login, '/login')  # '/users' is our entry point
 api.add_resource(register, '/register')  # '/users' is our entry point
-threading.thread.start_new_thread( print_time())
+axxx = threading.Thread(target=savedata, args=())
 if __name__ == '__main__':
     print("running")
     app.run()  # run our Flask app
