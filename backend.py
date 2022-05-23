@@ -4,7 +4,7 @@ import threading
 from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
 points = 0
-savetime = 60
+savetime = 20
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
@@ -15,9 +15,9 @@ def savedata():
         print("looped")
         time.sleep(savetime)
         f = open("savedata.txt","w")
-        f.write(userdata)
+        f.write(str(userdata))
         f.write("/n")
-        f.write(scoredata)
+        f.write(str(scoredata))
         f.close() #to change file access modes
 class Users(Resource):
     def get(self):
