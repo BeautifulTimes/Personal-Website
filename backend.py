@@ -16,7 +16,7 @@ def savedata():
         time.sleep(savetime)
         f = open("savedata.txt","w")
         f.write(str(userdata))
-        f.write("/n")
+        f.write("\n")
         f.write(str(scoredata))
         f.close() #to change file access modes
 class Users(Resource):
