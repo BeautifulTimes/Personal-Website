@@ -24,6 +24,8 @@ def readsavedata():
     f = open("savedata.txt", "r")
     userdata = ast.literal_eval(f.readline())
     scoredata = ast.literal_eval(f.readline())
+    print(userdata)
+    print(scoredata)
     f.close()
 class Users(Resource):
     def get(self):
