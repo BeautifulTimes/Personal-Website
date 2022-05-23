@@ -1,5 +1,6 @@
 from flask import Flask
 import time
+import thread
 from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
 points = 0
@@ -8,6 +9,14 @@ api = Api(app)
 CORS(app)
 scoredata = {}
 userdata = {}
+def savedata():
+    while 1==1:
+        time.sleep(100000)
+        f = open("savedata.txt","w")
+        f.write(userdata)
+        f.write("/n")
+        f.write(scoredata)
+        f.close() #to change file access modes
 class Users(Resource):
     def get(self):
         global points   
@@ -62,11 +71,7 @@ class register(Resource):
 api.add_resource(Users, '/users')  # '/users' is our entry point
 api.add_resource(login, '/login')  # '/users' is our entry point
 api.add_resource(register, '/register')  # '/users' is our entry point
-while 1==1:
-    time.sleep(1000)
-    f = open("myfile.txt","w")
-    f.write("Hello \n")
-    f.close() #to change file access modes
+
 if __name__ == '__main__':
     print("running")
     app.run()  # run our Flask app
