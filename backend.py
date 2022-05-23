@@ -61,8 +61,13 @@ class register(Resource):
 api.add_resource(Users, '/users')  # '/users' is our entry point
 api.add_resource(login, '/login')  # '/users' is our entry point
 api.add_resource(register, '/register')  # '/users' is our entry point
-f = open("myfile.txt","w")
-f.write("Hello \n")
-f.close() #to change file access modes
+for(;;)
+{
+    sleep(1000)
+    f = open("myfile.txt","w")
+    f.write("Hello \n")
+    f.close() #to change file access modes
+}
 if __name__ == '__main__':
+    print("running")
     app.run()  # run our Flask app
