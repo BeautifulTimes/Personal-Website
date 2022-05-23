@@ -1,6 +1,7 @@
 from flask import Flask
 import time
 import threading
+import ast
 from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
 points = 0
@@ -19,6 +20,12 @@ def savedata():
         f.write("\n")
         f.write(str(scoredata))
         f.close() #to change file access modes
+def readsavedata():
+    f = open("savedata.txt", "r")
+    userdata = ast.literal_eval(str(f.readline()))
+    scoredata = 
+    ast.literal_eval(str(f.readline()))
+    f.close()
 class Users(Resource):
     def get(self):
         global points   
@@ -70,6 +77,7 @@ class register(Resource):
             return 512
         print(args)
     pass
+readsavedata()
 api.add_resource(Users, '/users')  # '/users' is our entry point
 api.add_resource(login, '/login')  # '/users' is our entry point
 api.add_resource(register, '/register')  # '/users' is our entry point
