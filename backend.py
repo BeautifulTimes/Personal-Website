@@ -66,5 +66,5 @@ if __name__ == '__main__':
     print("running")
     f = open("myfile.txt","w")
     f.write("Hello \n")
-    file1.close() #to change file access modes
+    f.close() #to change file access modes
     app.run()  # run our Flask app
