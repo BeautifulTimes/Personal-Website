@@ -67,7 +67,7 @@ function lmao()
 {
 	if (getCookie("username") != "")
 	{
-		loginScript(username)
+		loginScript(getCookie("username"))
 		if (getCookie("username") != "")
 		{
 			document.getElementById("loggedin").innerHTML ="Logged in as " + getCookie("username");
