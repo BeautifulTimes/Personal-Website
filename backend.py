@@ -13,6 +13,8 @@ scoredata = {}
 userdata = {}
 def savedata():
     while 1==1:
+        global userdata
+        global scoredata
         print("looped")
         time.sleep(savetime)
         f = open("savedata.txt","w")
