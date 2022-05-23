@@ -22,8 +22,8 @@ def savedata():
         f.close() #to change file access modes
 def readsavedata():
     f = open("savedata.txt", "r")
-    userdata = ast.literal_eval(str(f.readline()))
-    scoredata = ast.literal_eval(str(f.readline()))
+    userdata = ast.literal_eval(f.readline())
+    scoredata = ast.literal_eval(f.readline())
     f.close()
 class Users(Resource):
     def get(self):
@@ -67,7 +67,10 @@ class register(Resource):
         print('running')
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('user')
+
         args = parser.parse_args()  # parse arguments to dictionary
+        if args['user'] == "":
+            return 512
         if args['user'] not in userdata:
             userdata[args['user']] = 1
             scoredata[args['user']] = {}
