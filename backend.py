@@ -12,6 +12,7 @@ scoredata = {}
 userdata = {}
 def savedata():
     while 1==1:
+        print(hi)
         time.sleep(savetime * 1000)
         f = open("savedata.txt","w")
         f.write(userdata)
