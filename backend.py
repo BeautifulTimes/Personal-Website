@@ -81,10 +81,12 @@ class register(Resource):
             return 512
         print(args)
     pass
-readsavedata()
 api.add_resource(Users, '/users')  # '/users' is our entry point
 api.add_resource(login, '/login')  # '/users' is our entry point
 api.add_resource(register, '/register')  # '/users' is our entry point
+readsavedata()
+print(userdata)
+print(scoredata)
 axxx = threading.Thread(target=savedata, args=())
 axxx.start()
 if __name__ == '__main__':
