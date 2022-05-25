@@ -33,7 +33,7 @@ def updatescoreboard():
     scoreboard = []
     for key in scoredata:
         scoreboard.append((key,len(scoredata[key])))
-    data.sort(key=lambda tup: tup[1]) 
+    scoreboard.sort(key=lambda tup: tup[1]) 
     sleep(scoreboardrefresh)
 class Users(Resource):
     def get(self):
