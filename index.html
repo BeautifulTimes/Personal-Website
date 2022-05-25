@@ -1,13 +1,81 @@
 <!DOCTYPE html>
 <html>
 <style>
-table, th, td {
-  border:1px solid black;
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 70px;
 }
 </style>
 <body>
 <div id="demo2">
 <button type="button" onclick="loadGet()">Leaderboard</button>
+</div>
+
+<h2>Scoreboard</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td><div id="user1"></div></td>
+    <td><div id="point1"></td>
+  </tr>
+  <tr>
+    <td><div id="user2"></div></td>
+    <td><div id="point2"></td>
+  </tr>
+  <tr>
+    <td><div id="user3"></div></td>
+    <td><div id="point3"></td>
+  </tr>
+  <tr>
+    <td><div id="user4"></div></td>
+    <td><div id="point4"></td>
+  </tr>
+  <tr>
+    <td><div id="user5"></div></td>
+    <td><div id="point5"></td>
+  </tr>
+  <tr>
+    <td><div id="user6"></div></td>
+    <td><div id="point6"></td>
+  </tr>
+  <tr>
+    <td><div id="user7"></div></td>
+    <td><div id="point7"></td>
+  </tr>
+  <tr>
+    <td><div id="user8"></div></td>
+    <td><div id="point8"></td>
+  </tr>
+  <tr>
+    <td><div id="user8"></div></td>
+    <td><div id="point8"></td>
+  </tr>
+  <tr>
+    <td><div id="user9"></div></td>
+    <td><div id="point9"></td>
+  </tr>
+  <tr>
+    <td><div id="user10"></div></td>
+    <td><div id="point10"></td>
+  </tr>
+</table>
+<a href="http://68.183.195.190/point1.html">Point 1</a>
+<a href="http://68.183.195.190/login.html">Log In</a>
+<a href="http://68.183.195.190/register.html">Register</a>
+</script>
+<div id="loggedin">
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -92,64 +160,5 @@ function lmao()
 	}
 }
 </script>
-<h2>Scoreboard</h2>
-
-<table style="width:100%">
-  <tr>
-    <th>Name</th>
-    <th>Points</th>
-  </tr>
-  <tr>
-    <td><div id="user1"></div></td>
-    <td><div id="point1"></td>
-  </tr>
-  <tr>
-    <td><div id="user2"></div></td>
-    <td><div id="point2"></td>
-  </tr>
-  <tr>
-    <td><div id="user3"></div></td>
-    <td><div id="point3"></td>
-  </tr>
-  <tr>
-    <td><div id="user4"></div></td>
-    <td><div id="point4"></td>
-  </tr>
-  <tr>
-    <td><div id="user5"></div></td>
-    <td><div id="point5"></td>
-  </tr>
-  <tr>
-    <td><div id="user6"></div></td>
-    <td><div id="point6"></td>
-  </tr>
-  <tr>
-    <td><div id="user7"></div></td>
-    <td><div id="point7"></td>
-  </tr>
-  <tr>
-    <td><div id="user8"></div></td>
-    <td><div id="point8"></td>
-  </tr>
-  <tr>
-    <td><div id="user8"></div></td>
-    <td><div id="point8"></td>
-  </tr>
-  <tr>
-    <td><div id="user9"></div></td>
-    <td><div id="point9"></td>
-  </tr>
-  <tr>
-    <td><div id="user10"></div></td>
-    <td><div id="point10"></td>
-  </tr>
-</table>
-<a href="http://68.183.195.190/point1.html">Point 1</a>
-<a href="http://68.183.195.190/login.html">Log In</a>
-<a href="http://68.183.195.190/register.html">Register</a>
-</script>
-<div id="loggedin">
-</div>
-
 </body>
 </html>
