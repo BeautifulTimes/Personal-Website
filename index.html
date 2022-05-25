@@ -19,8 +19,7 @@ function loadGet() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("demo2").innerHTML =
       this.responseText;
-	  var second_list = '{{this.responseText}}';
-	  const scoreboardinfo = second_list.split(",");
+	  const scoreboardinfo = this.responseText.split(",");
 
       document.getElementById("troll").innerHTML =
       scoreboardinfo[0];
