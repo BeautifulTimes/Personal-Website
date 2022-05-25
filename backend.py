@@ -92,7 +92,7 @@ api.add_resource(login, '/login')  # '/users' is our entry point
 api.add_resource(register, '/register')  # '/users' is our entry point
 readsavedata()
 axxx = threading.Thread(target=savedata, args=())
-axxx = threading.Thread(target=scoreboardrefresh, args=())
+axxx = threading.Thread(target=updatescoreboard, args=())
 axxx.start()
 if __name__ == '__main__':
     print("running")
