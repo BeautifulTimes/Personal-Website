@@ -19,8 +19,10 @@ function loadGet() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("demo2").innerHTML =
       this.responseText;
+	  var second_list = '{{this.responseText}}';
+
       document.getElementById("troll").innerHTML =
-      typeof(this.responseText);
+      typeof(second_list);
     }
   };
   xhttp.open("GET", "http://68.183.195.190:8000/users", true);
@@ -89,11 +91,11 @@ function lmao()
 
 <table style="width:100%">
   <tr>
-    <th><div id="troll"></div></th>
+    <th>Name</th>
     <th>Points</th>
   </tr>
   <tr>
-    <td>Test1</td>
+    <td><div id="troll"></div></td>
     <td>100</td>
   </tr>
   <tr>
