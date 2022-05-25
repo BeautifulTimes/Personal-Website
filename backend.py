@@ -29,12 +29,13 @@ def readsavedata():
     scoredata = ast.literal_eval(f.readline())
     f.close()
 def updatescoreboard():
-    global scoreboard
-    scoreboard = []
-    for key in scoredata:
-        scoreboard.append((key,len(scoredata[key])))
-    scoreboard.sort(key=lambda tup: tup[1]) 
-    time.sleep(scoreboardrefresh)
+    while 1==1:
+        global scoreboard
+        scoreboard = []
+        for key in scoredata:
+            scoreboard.append((key,len(scoredata[key])))
+        scoreboard.sort(key=lambda tup: tup[1]) 
+        time.sleep(scoreboardrefresh)
 class Users(Resource):
     def get(self):
         global points   
