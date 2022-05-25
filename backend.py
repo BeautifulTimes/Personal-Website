@@ -6,14 +6,15 @@ from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
 points = 0
 savetime = 10
+scoreboardrefresh = 10
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
 scoredata = {}
 userdata = {}
+scoreboard = []
 def savedata():
     while 1==1:
-        print("looped")
         time.sleep(savetime)
         f = open("savedata.txt","w")
         f.write(str(userdata))
@@ -27,6 +28,13 @@ def readsavedata():
     userdata = ast.literal_eval(f.readline())
     scoredata = ast.literal_eval(f.readline())
     f.close()
+def updatescoreboard():
+    global scoreboard
+    scoreboard = []
+    for key in scoredata:
+        scoreboard.append((key,len(scoredata[key])))
+    data.sort(key=lambda tup: tup[1]) 
+    sleep(scoreboardrefresh)
 class Users(Resource):
     def get(self):
         global points   
@@ -53,7 +61,6 @@ class login(Resource):
     def get(self):
         return userdata , 200
     def post(self):
-        print('running')
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('user')
         args = parser.parse_args()  # parse arguments to dictionary
@@ -69,7 +76,6 @@ class register(Resource):
         print('running')
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('user')
-
         args = parser.parse_args()  # parse arguments to dictionary
         if args['user'] == "":
             return 512
@@ -86,6 +92,7 @@ api.add_resource(login, '/login')  # '/users' is our entry point
 api.add_resource(register, '/register')  # '/users' is our entry point
 readsavedata()
 axxx = threading.Thread(target=savedata, args=())
+axxx = threading.Thread(target=scoreboardrefresh, args=())
 axxx.start()
 if __name__ == '__main__':
     print("running")
