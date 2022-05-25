@@ -21,10 +21,14 @@ th {
 
 <h2>Scoreboard</h2>
 
-<table style="width:100%">
+<table>
   <tr>
     <th>Name</th>
     <th>Points</th>
+  </tr>
+  <tr>
+    <td><div id="user0"></div></td>
+    <td><div id="point0"></td>
   </tr>
   <tr>
     <td><div id="user1"></div></td>
@@ -92,8 +96,8 @@ function loadGet() {
 		let point = "point";
 		for(let x = 0;x< scoreboardinfo.length-1;x+=2)
 		{
-		document.getElementById(tempuser.concat(((x/2)-1).toString())).innerHTML = scoreboardinfo[x];
-		document.getElementById(point.concat(((x/2)-1).toString())).innerHTML = scoreboardinfo[x+1];
+		document.getElementById(tempuser.concat(((x/2)+1).toString())).innerHTML = scoreboardinfo[x];
+		document.getElementById(point.concat(((x/2)+1).toString())).innerHTML = scoreboardinfo[x+1];
 		}
 
     }
