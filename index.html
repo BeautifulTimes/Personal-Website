@@ -91,7 +91,7 @@ function loadGet() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("demo2").innerHTML =
       this.responseText;
-	  this.responseText.replace("\",'')
+	  this.responseText.replace("/",'')
 	  const scoreboardinfo = this.responseText.split(",");
 		let tempuser = "user";
 		let point = "point";
