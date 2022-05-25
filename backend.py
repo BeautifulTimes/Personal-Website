@@ -33,6 +33,7 @@ def updatescoreboard():
     while 1==1:
         global scoreboard
         global javastring
+        javastring = ""
         scoreboard = []
         for key in scoredata:
             scoreboard.append((key,len(scoredata[key])))
