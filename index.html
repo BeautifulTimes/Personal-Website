@@ -20,9 +20,14 @@ function loadGet() {
       document.getElementById("demo2").innerHTML =
       this.responseText;
 	  const scoreboardinfo = this.responseText.split(",");
+		let tempuser = "user";
+		let point = "point";
+		for(let x = 0;x< scoreboardinfo.length-1;x+=2)
+		{
+		document.getElementById(tempuser.concat(((x/2)-1).toString())).innerHTML = scoreboardinfo[x];
+		document.getElementById(point.concat(((x/2)-1).toString())).innerHTML = scoreboardinfo[x+1];
+		}
 
-      document.getElementById("troll").innerHTML =
-      scoreboardinfo[0];
     }
   };
   xhttp.open("GET", "http://68.183.195.190:8000/users", true);
@@ -95,12 +100,48 @@ function lmao()
     <th>Points</th>
   </tr>
   <tr>
-    <td><div id="troll"></div></td>
-    <td>100</td>
+    <td><div id="user1"></div></td>
+    <td><div id="point1"></td>
   </tr>
   <tr>
-    <td>Test2</td>
-    <td>10</td>
+    <td><div id="user2"></div></td>
+    <td><div id="point2"></td>
+  </tr>
+  <tr>
+    <td><div id="user3"></div></td>
+    <td><div id="point3"></td>
+  </tr>
+  <tr>
+    <td><div id="user4"></div></td>
+    <td><div id="point4"></td>
+  </tr>
+  <tr>
+    <td><div id="user5"></div></td>
+    <td><div id="point5"></td>
+  </tr>
+  <tr>
+    <td><div id="user6"></div></td>
+    <td><div id="point6"></td>
+  </tr>
+  <tr>
+    <td><div id="user7"></div></td>
+    <td><div id="point7"></td>
+  </tr>
+  <tr>
+    <td><div id="user8"></div></td>
+    <td><div id="point8"></td>
+  </tr>
+  <tr>
+    <td><div id="user8"></div></td>
+    <td><div id="point8"></td>
+  </tr>
+  <tr>
+    <td><div id="user9"></div></td>
+    <td><div id="point9"></td>
+  </tr>
+  <tr>
+    <td><div id="user10"></div></td>
+    <td><div id="point10"></td>
   </tr>
 </table>
 <a href="http://68.183.195.190/point1.html">Point 1</a>
