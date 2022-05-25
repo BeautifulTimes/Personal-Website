@@ -20,9 +20,10 @@ function loadGet() {
       document.getElementById("demo2").innerHTML =
       this.responseText;
 	  var second_list = '{{this.responseText}}';
+	  const myArray = second_list.split(",");
 
       document.getElementById("troll").innerHTML =
-      typeof(second_list);
+      myarray[0];
     }
   };
   xhttp.open("GET", "http://68.183.195.190:8000/users", true);
