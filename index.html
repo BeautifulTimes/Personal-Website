@@ -94,10 +94,16 @@ function loadGet() {
 	  const scoreboardinfo = this.responseText.split(",");
 		let tempuser = "user";
 		let point = "point";
-		for(let x = 0;x< scoreboardinfo.length-1;x+=2)
+		let x = 0
+		for(;x< scoreboardinfo.length-1;x+=2)
 		{
-		document.getElementById(tempuser.concat(((x/2)+1).toString())).innerHTML = scoreboardinfo[x];
-		document.getElementById(point.concat(((x/2)+1).toString())).innerHTML = scoreboardinfo[x+1];
+			document.getElementById(tempuser.concat(((x/2)+1).toString())).innerHTML = scoreboardinfo[x];
+			document.getElementById(point.concat(((x/2)+1).toString())).innerHTML = scoreboardinfo[x+1];
+		}
+		for(; x < 19; x+=2)
+		{
+			document.getElementById(tempuser.concat(((x/2)+1).toString())).innerHTML = "";
+			document.getElementById(point.concat(((x/2)+1).toString())).innerHTML = "";
 		}
 
     }
