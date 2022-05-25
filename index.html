@@ -19,6 +19,8 @@ function loadGet() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("demo2").innerHTML =
       this.responseText;
+      document.getElementById("troll").innerHTML =
+      typeof(this.responseText);
     }
   };
   xhttp.open("GET", "http://68.183.195.190:8000/users", true);
@@ -87,8 +89,7 @@ function lmao()
 
 <table style="width:100%">
   <tr>
-    <th><div id="loggedin">
-</div></th>
+    <th><div id="troll"></div></th>
     <th>Points</th>
   </tr>
   <tr>
@@ -104,7 +105,8 @@ function lmao()
 <a href="http://68.183.195.190/login.html">Log In</a>
 <a href="http://68.183.195.190/register.html">Register</a>
 </script>
-
+<div id="loggedin">
+</div>
 
 </body>
 </html>
