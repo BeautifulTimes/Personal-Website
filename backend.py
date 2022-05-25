@@ -13,6 +13,7 @@ CORS(app)
 scoredata = {}
 userdata = {}
 scoreboard = []
+javastring = ""
 def savedata():
     while 1==1:
         time.sleep(savetime)
@@ -31,16 +32,19 @@ def readsavedata():
 def updatescoreboard():
     while 1==1:
         global scoreboard
+        global javastring
         scoreboard = []
         for key in scoredata:
             scoreboard.append((key,len(scoredata[key])))
-        scoreboard.sort(key=lambda tup: tup[1], reverse=True) 
+        scoreboard.sort(key=lambda tup: tup[1], reverse=True)
+        for item in scoreboard:
+            javastring = javastring + str(item[0]) + "," + str(item[1]) + ","
         time.sleep(scoreboardrefresh)
 class Users(Resource):
     def get(self):
         global points   
         points = points + 1
-        return scoreboard , 200
+        return javastring , 200
     def post(self):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('username')
