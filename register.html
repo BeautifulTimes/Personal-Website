@@ -21,13 +21,13 @@ function loginScript() {
   xhttp.open("POST", "http://68.183.195.190:8000/register", true);
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-				document.getElementById("warning").innerHTML =this.responseText;
+			document.getElementById("warning").innerHTML =this.responseText;
 
 		if (this.responseText == 200)
 		{
 			setCookie("username", document.getElementById("username").value, 1) 
 			document.getElementById("warning").innerHTML ="Succesfully registered";
-			window.location.replace("yideng.ca");
+			location.replace("yideng.ca")
 
 
 		}
