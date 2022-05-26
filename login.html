@@ -24,7 +24,7 @@ function loginScript() {
 		if (this.responseText == 200)
 		{
 			setCookie("username", document.getElementById("username").value, 1) 
-			location.reload();
+			window.location.replace("yideng.ca");
 		}
 		if (this.responseText == 512)
 		{
