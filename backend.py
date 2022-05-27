@@ -98,9 +98,11 @@ api.add_resource(Users, '/users')  # '/users' is our entry point
 api.add_resource(login, '/login')  # '/users' is our entry point
 api.add_resource(register, '/register')  # '/users' is our entry point
 readsavedata()
-axxx = threading.Thread(target=savedata, args=())
+axxx2 = threading.Thread(target=savedata, args=())
+
 axxx = threading.Thread(target=updatescoreboard, args=())
 axxx.start()
+axxx2.start()
 if __name__ == '__main__':
     print("running")
     app.run()  # run our Flask app
