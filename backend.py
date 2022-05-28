@@ -23,7 +23,7 @@ def invalidname(name):
             useless = useless + 1
         else:
             return True
-       return False
+    return False
 def savedata():
     while 1==1:
         time.sleep(savetime)
