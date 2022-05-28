@@ -85,7 +85,7 @@ class register(Resource):
         parser.add_argument('user')
         args = parser.parse_args()  # parse arguments to dictionary
         namecheck = args['user']
-        if invalidname(namecheck)
+        if invalidname(namecheck):
             return 513
         if args['user'] == "":
             return 513
