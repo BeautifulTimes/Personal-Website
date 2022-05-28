@@ -14,15 +14,15 @@ scoredata = {}
 userdata = {}
 scoreboard = []
 javastring = ""
-    def invalidname(name):
-        useless = 0
-        if len(name) < 2 or len(name) > 32:
+def invalidname(name):
+    useless = 0
+    if len(name) < 2 or len(name) > 32:
+        return True
+    for chars in name:
+        if (chars <= 'Z' and chars >= 'A') or (chars <= 'z' and chars >= 'a') or (chars <= '9' and chars >= '0'):
+            useless = useless + 1
+        else:
             return True
-        for chars in name:
-            if (chars <= 'Z' and chars >= 'A') or (chars <= 'z' and chars >= 'a') or (chars <= '9' and chars >= '0'):
-               useless = useless + 1
-            else:
-                return True
        return False
 def savedata():
     while 1==1:
