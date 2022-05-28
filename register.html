@@ -36,6 +36,11 @@ function loginScript() {
 			document.getElementById("warning").innerHTML ="User already registered";
 
 		}
+		else if(this.responseText == 513)
+		{
+			document.getElementById("warning").innerHTML ="Username must be alphanumeric (a-z, A-Z, 0-9)";
+
+		}
     }
   };
   xhttp.setRequestHeader('Content-Type', 'application/json');

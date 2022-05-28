@@ -84,8 +84,11 @@ class register(Resource):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('user')
         args = parser.parse_args()  # parse arguments to dictionary
+        namecheck = args['user']
+        if invalidname(namecheck)
+            return 513
         if args['user'] == "":
-            return 512
+            return 513
         if args['user'] not in userdata:
             userdata[args['user']] = 1
             scoredata[args['user']] = {}
@@ -93,6 +96,16 @@ class register(Resource):
         else:
             return 512
         print(args)
+    def invalidname(name):
+        useless = 0
+        if len(name) < 2 or len(name) > 32:
+            return True
+        for chars in name:
+            if (chars <= 'Z' and chars >= 'A') or (chars <= 'z' and chars >= 'a') or (chars <= '9' and chars >= '0'):
+               useless = useless + 1
+            else:
+                return True
+        return False
     pass
 api.add_resource(Users, '/users')  # '/users' is our entry point
 api.add_resource(login, '/login')  # '/users' is our entry point
