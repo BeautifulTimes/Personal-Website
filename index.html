@@ -1,20 +1,76 @@
 <!DOCTYPE html>
 <html>
 <style>
-table, td, th {
-  border: 1px solid black;
+table, th, td {
+  border:1px solid black;
+}
+input[type=text] {
+  width: auto;
+  padding: 7px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+h1 { font-family: 'Enriqueta', arial, serif; line-height: 1.25; margin: 0 0 10px; font-size: 25px; font-weight: bold; }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
-th {
-  height: 70px;
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li em {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+  font-size: 14px;
+  
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
 }
 </style>
 <body>
+<ul>
+  <li><a href="#http://68.183.195.190/">Home</a></li>
+  <li><a href="http://68.183.195.190/">Scoreboard</a></li>
+  <li id = "loginbutton" style="float:right"><a href="http://68.183.195.190/login.html">Log In</a></li>
+  <li id = "registerbutton" style="float:right"><a href="http://68.183.195.190/register.html">Register</a></li>
+  <li id = "logout" style="float:right"><a href="http://68.183.195.190/logout.html">Log Out</a></li>
+
+</ul>
+
 <div id="demo2">
 <button type="button" onclick="loadGet()">Leaderboard</button>
 </div>
@@ -150,16 +206,18 @@ function lmao()
 		loginScript(getCookie("username"))
 		if (getCookie("username") != "")
 		{
-			document.getElementById("loggedin").innerHTML ="Logged in as " + getCookie("username");
+			document.getElementById('registerbutton').remove();
+			document.getElementById('loginbutton').remove();
+
 		}
 		else
 		{
-			document.getElementById("loggedin").innerHTML =" You are not logged in";
+			document.getElementById('logout').remove();
 		}
 	}
 	else
 	{
-		document.getElementById("loggedin").innerHTML =" You are not logged in";
+			document.getElementById('logout').remove();
 	}
 	loadGet()
 }
