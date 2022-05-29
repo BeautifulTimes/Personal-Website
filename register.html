@@ -64,7 +64,7 @@ li a:hover:not(.active) {
 </style>
 
 <body>
-<ul>
+<ul id = "Header">
   <li><a href="#http://68.183.195.190/">Home</a></li>
   <li><a href="http://68.183.195.190/">Scoreboard</a></li>
   <li id = "loginbutton" style="float:right"><a href="http://68.183.195.190/login.html">Log In</a></li>
@@ -142,14 +142,13 @@ function lmao()
 {
 	if (getCookie("username") != "")
 	{
-		document.getElementById("loggedin").innerHTML ="Logged in as " + getCookie("username");
+		document.getElementById("Header").childnodes[4].textContent ="Logged in as " + getCookie("username");
 		document.getElementById('registerbutton').remove();
 		document.getElementById('loginbutton').remove();
 
 	}
 	else
 	{
-		document.getElementById("demo").innerHTML =" You are not logged in";
 		document.getElementById('loggedin').remove();
 
 	}
