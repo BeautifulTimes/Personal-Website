@@ -58,8 +58,9 @@ li a:hover:not(.active) {
 <ul>
   <li><a href="#http://68.183.195.190/">Home</a></li>
   <li><a href="http://68.183.195.190/">Scoreboard</a></li>
-  <li style="float:right"><a href="http://68.183.195.190/login.html">Log In</a></li>
-    <li style="float:right"><a href="http://68.183.195.190/register.html">Register</a></li>
+  <li id = "loginbutton" style="float:right"><a href="http://68.183.195.190/login.html">Log In</a></li>
+  <li id = "registerbutton" style="float:right"><a href="http://68.183.195.190/register.html">Register</a></li>
+  <li id = "loggedin" style="float:right"></a></li>
 
 </ul>
 
@@ -132,11 +133,16 @@ function lmao()
 {
 	if (getCookie("username") != "")
 	{
-		document.getElementById("demo").innerHTML ="Logged in as " + getCookie("username");
+		document.getElementById("loggedin").innerHTML ="Logged in as " + getCookie("username");
+		document.getElementById('registerbutton').remove();
+		document.getElementById('loginbutton').remove();
+
 	}
 	else
 	{
 		document.getElementById("demo").innerHTML =" You are not logged in";
+		document.getElementById('loggedin').remove();
+
 	}
 }
 
