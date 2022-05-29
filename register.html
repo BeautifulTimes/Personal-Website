@@ -44,6 +44,15 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
+li em {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+  font-size: 14px;
+  
+}
 
 li a:hover:not(.active) {
   background-color: #111;
@@ -60,7 +69,7 @@ li a:hover:not(.active) {
   <li><a href="http://68.183.195.190/">Scoreboard</a></li>
   <li id = "loginbutton" style="float:right"><a href="http://68.183.195.190/login.html">Log In</a></li>
   <li id = "registerbutton" style="float:right"><a href="http://68.183.195.190/register.html">Register</a></li>
-  <li id = "loggedin" style="float:right"><a href="http://68.183.195.190/">A</a></li>
+  <li id = "loggedin" style="float:right"><a href="http://68.183.195.190/register.html"></a><em> 1 <em> </li>
 
 </ul>
 
@@ -133,7 +142,7 @@ function lmao()
 {
 	if (getCookie("username") != "")
 	{
-		//document.getElementById("loggedin").innerHTML ="Logged in as " + getCookie("username");
+		document.getElementById("loggedin").innerHTML ="Logged in as " + getCookie("username");
 		document.getElementById('registerbutton').remove();
 		document.getElementById('loginbutton').remove();
 
