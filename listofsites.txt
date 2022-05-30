@@ -1,50 +1,142 @@
-http://68.183.195.190/point1.html
-http://68.183.195.190/1s3.html
-http://68.183.195.190/e3a.html
-http://68.183.195.190/bf23.html
-http://68.183.195.190/fgsdf.html
-http://68.183.195.190/gdb.html
-http://68.183.195.190/94.html
-http://68.183.195.190/sa.html
-http://68.183.195.190/zvzxc.html
-http://68.183.195.190/sgvb.html
-http://68.183.195.190/reqf.html
-http://68.183.195.190/dh.html
-http://68.183.195.190/df.html
-http://68.183.195.190/wdsfdfgd.html
-http://68.183.195.190/gretwtw.html
-http://68.183.195.190/weotji.html
-http://68.183.195.190/sdfgj.html
-http://68.183.195.190/sdfgidg.html
-http://68.183.195.190/sdfgoowerjtoi.html
-http://68.183.195.190/sgfgdjsg.html
-http://68.183.195.190/sdgoipjgnsjg.html
-http://68.183.195.190/gsgiopsjgsfdgs.html
-http://68.183.195.190/fgsdgsbcb.html
-http://68.183.195.190/gsdetrjsdfg.html
-http://68.183.195.190/sgfdgffjwt.html
-http://68.183.195.190/gsdfgijsdfg.html
-http://68.183.195.190/dfhcnjbv.html
-http://68.183.195.190/dsfgsgjiwr.html
-http://68.183.195.190/sdfgsdgfjsg.html
-http://68.183.195.190/sdfgiotre.html
-http://68.183.195.190/sdfgnjbv.html
-http://68.183.195.190/erwtikfgj.html
-http://68.183.195.190/dfgiwejs.html
-http://68.183.195.190/fdgjfib.html
-http://68.183.195.190/dfgjisdfgss.html
-http://68.183.195.190/fgpsdfgjjsg.html
-http://68.183.195.190/point20.html
-http://68.183.195.190/af5fsdf.html
-http://68.183.195.190/bnvcdgf.html
-http://68.183.195.190/wertwegf.html
-http://68.183.195.190/dbxc.html
-http://68.183.195.190/qw.html
-http://68.183.195.190/fsdgd.html
-http://68.183.195.190/twerqwe.html
-http://68.183.195.190/fds.html
-http://68.183.195.190/gsdf.html
-http://68.183.195.190/ghgfhrety.html
-http://68.183.195.190/fsdgsdgfertw.html
-http://68.183.195.190/sdfg.html
-http://68.183.195.190/adsfasdfasdfbxcv.hmtl
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+input[type=text] {
+  width: auto;
+  padding: 7px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+h1 { font-family: 'Enriqueta', arial, serif; line-height: 1.25; margin: 0 0 10px; font-size: 25px; font-weight: bold; }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li em {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+  font-size: 14px;
+  
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+<body>
+<ul>
+  <li><a href="http://68.183.195.190/">Home</a></li>
+  <li><a href="http://68.183.195.190/scoreboard.html">Scoreboard</a></li>
+  <li id = "loginbutton" style="float:right"><a href="http://68.183.195.190/login.html">Log In</a></li>
+  <li id = "registerbutton" style="float:right"><a href="http://68.183.195.190/register.html">Register</a></li>
+  <li id = "logout" style="float:right"><a href="http://68.183.195.190/logout.html">Log Out</a></li>
+
+</ul>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  lmao();
+})
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function lmao()
+{
+	if (getCookie("username") != "")
+	{
+		document.getElementById('registerbutton').remove();
+		document.getElementById('loginbutton').remove();
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("POST", "http://68.183.195.190:8000/users", true);
+		xhttp.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				if (this.responseText == 200)
+				{
+					document.getElementById("warning").innerHTML ="New QR code found";
+				}
+				if (this.responseText == 512)
+				{
+					document.getElementById("warning").innerHTML ="QR code has already been found";
+				}
+			
+			}
+		};
+		xhttp.setRequestHeader('Content-Type', 'application/json');
+		xhttp.send(JSON.stringify({
+			username: getCookie("username"),
+			value: location.pathname.substring(location.pathname.lastIndexOf("/") + 1)
+		}))
+	}
+	else
+	{
+		document.getElementById('logout').remove();
+		document.getElementById("demo").innerHTML =" You are not logged in";
+	}
+}
+
+</script>
+<div id="demo">
+</div>
+<div id="warning">
+</div>
+</body>
+</html>
