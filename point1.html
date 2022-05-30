@@ -109,7 +109,7 @@ function lmao()
 			{
 				if (this.responseText == 200)
 				{
-					document.getElementById("warning").innerHTML ="QR code 1 found";
+					document.getElementById("warning").innerHTML ="new QR code found";
 				}
 				if (this.responseText == 512)
 				{
@@ -121,7 +121,7 @@ function lmao()
 		xhttp.setRequestHeader('Content-Type', 'application/json');
 		xhttp.send(JSON.stringify({
 			username: getCookie("username"),
-			value: 12345
+			value: location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
 		}))
 	}
 	else
