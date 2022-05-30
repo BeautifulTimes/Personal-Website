@@ -101,6 +101,8 @@ function lmao()
 {
 	if (getCookie("username") != "")
 	{
+		document.getElementById('registerbutton').remove();
+		document.getElementById('loginbutton').remove();
 		var xhttp = new XMLHttpRequest();
 		xhttp.open("POST", "http://68.183.195.190:8000/users", true);
 		xhttp.onreadystatechange = function()
@@ -126,6 +128,7 @@ function lmao()
 	}
 	else
 	{
+		document.getElementById('logout').remove();
 		document.getElementById("demo").innerHTML =" You are not logged in";
 	}
 }
