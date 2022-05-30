@@ -129,10 +129,15 @@ function lmao()
 	if (getCookie("username") != "")
 	{
 		document.getElementById("demo").innerHTML ="Logged in as " + getCookie("username");
+		document.getElementById('registerbutton').remove();
+		document.getElementById('loginbutton').remove();
+
 	}
 	else
 	{
 		document.getElementById("demo").innerHTML =" You are not logged in";
+			document.getElementById('logout').remove();
+
 	}
 }
 
