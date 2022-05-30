@@ -82,32 +82,6 @@ Placeholder Text
 document.addEventListener("DOMContentLoaded", function() {
   lmao();
 })
-function loadGet() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      this.responseText;
-	  const scoreboardinfo = this.responseText.replace("\"",'').split(",");
-		let tempuser = "user";
-		let point = "point";
-		let x = 0
-		for(;x< scoreboardinfo.length-1;x+=2)
-		{
-			document.getElementById(tempuser.concat(((x/2)+1).toString())).innerHTML = scoreboardinfo[x];
-			document.getElementById(point.concat(((x/2)+1).toString())).innerHTML = scoreboardinfo[x+1];
-		}
-		for(; x < 19; x+=2)
-		{
-			document.getElementById(tempuser.concat(((x/2)+1).toString())).innerHTML = "placeholder";
-			document.getElementById(point.concat(((x/2)+1).toString())).innerHTML = "placeholder";
-		}
-
-    }
-  };
-  xhttp.open("GET", "http://68.183.195.190:8000/users", true);
-  xhttp.send();
-
-}
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -166,7 +140,6 @@ function lmao()
 	{
 			document.getElementById('logout').remove();
 	}
-	loadGet()
 }
 </script>
 </body>
