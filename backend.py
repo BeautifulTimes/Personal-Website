@@ -72,7 +72,7 @@ class Users(Resource):
         if args['username'] in userdata:
             if args['value'] not in scoredata[args['username']]:
                 scoredata[args['username']][args['value']] = 1
-                scoredata[args['user']]['time'] = time.time() 
+                scoredata[args['username']]['time'] = time.time() 
             else:
                 return 512
 
