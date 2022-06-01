@@ -41,7 +41,7 @@ def readsavedata():
     scoredata = ast.literal_eval(f.readline())
     f.close()
 def sortinfunc(e):
-    return e[1] * 100000 + e[2]/1000000000000 
+    return e[1] * 100000 - e[2]/1000000000000 
 def updatescoreboard():
     while 1==1:
         global scoreboard
