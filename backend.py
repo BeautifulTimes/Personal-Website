@@ -40,6 +40,8 @@ def readsavedata():
     userdata = ast.literal_eval(f.readline())
     scoredata = ast.literal_eval(f.readline())
     f.close()
+def sortinfunc(e)
+    return e[1] * 100000 + e[2]/1000000000000 
 def updatescoreboard():
     while 1==1:
         global scoreboard
@@ -47,10 +49,14 @@ def updatescoreboard():
         javastring = ""
         scoreboard = []
         for key in scoredata:
-            scoreboard.append((key,len(scoredata[key])))
-        scoreboard.sort(key=lambda tup: tup[1], reverse=True)
+            scoreboard.append((key,len(scoredata[key])-1,scoredata[key]['time']))
+        scoreboard.sort(key=sortinfunc, reverse=True)
+        maxnumber = 0
         for item in scoreboard:
+            maxnumber = maxnumber + 1
             javastring = javastring + str(item[0]) + "," + str(item[1]) + ","
+            if maxnumber > 10:
+                break
         time.sleep(scoreboardrefresh)
 class Users(Resource):
     def get(self):
@@ -65,7 +71,8 @@ class Users(Resource):
         print(args['username'])
         if args['username'] in userdata:
             if args['value'] not in scoredata[args['username']]:
-                scoredata[args['username']][args['value']] = 1 
+                scoredata[args['username']][args['value']] = 1
+                scoredata[args['user']]['time'] = time.time() 
             else:
                 return 512
 
@@ -102,6 +109,7 @@ class register(Resource):
         if args['user'] not in userdata:
             userdata[args['user']] = 1
             scoredata[args['user']] = {}
+            scoredata[args['user']]['time'] = time.time()
             return 200
         else:
             return 512
