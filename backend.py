@@ -93,6 +93,16 @@ class login(Resource):
         else:
             return 512
     pass
+class getselfpoint(Resource):
+    def post(self):
+        parser = reqparse.RequestParser()  # initialize
+        parser.add_argument('user')
+        args = parser.parse_args()  # parse arguments to dictionary
+        if args['user'] in userdata:    
+            return len(scoredata[args['user']])
+        else:
+            return 512
+    pass
 class register(Resource):
     def get(self):
         return userdata , 200
@@ -119,6 +129,8 @@ class register(Resource):
 api.add_resource(Users, '/users')  # '/users' is our entry point
 api.add_resource(login, '/login')  # '/users' is our entry point
 api.add_resource(register, '/register')  # '/users' is our entry point
+api.add_resource(getselfpoint, '/getselfpoint')  # '/users' is our entry point
+
 readsavedata()
 axxx2 = threading.Thread(target=savedata, args=())
 
