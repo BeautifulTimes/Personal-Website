@@ -19,7 +19,7 @@ def invalidname(name):
     if len(name) < 2 or len(name) > 32:
         return True
     for chars in name:
-        if (chars <= 'Z' and chars >= 'A') or (chars <= 'z' and chars >= 'a') or (chars <= '9' and chars >= '0'):
+        if (chars <= 'Z' and chars >= 'A') or (chars <= 'z' and chars >= 'a') or (chars <= '9' and chars >= '0') or (chars == ' '):
             useless = useless + 1
         else:
             return True
