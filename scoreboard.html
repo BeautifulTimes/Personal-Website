@@ -141,6 +141,20 @@ li a:hover:not(.active) {
 document.addEventListener("DOMContentLoaded", function() {
   lmao();
 })
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 function loadGet() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -181,7 +195,7 @@ function loadGet2() {
   };
     xhttp.setRequestHeader('Content-Type', 'application/json');
 xhttp.send(JSON.stringify({
-    user: document.getElementById("username").value,
+    user: getCookie("username"),
 
 }));
 }
@@ -192,20 +206,7 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function getCookie(cname) {
-  let name = cname + "=";
-  let ca = document.cookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
+
 function loginScript(username) {
   var xhttp = new XMLHttpRequest();
   xhttp.open("POST", "http://68.183.195.190:8000/login", true);
