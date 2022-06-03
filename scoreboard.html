@@ -171,13 +171,14 @@ function loadGet() {
 }
 function loadGet2() {
   var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "http://68.183.195.190:8000/getselfpoint", true);
+
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status != 512) {
 		document.getElementById("score").innerHTML = "You have found".concat(this.status.toString(), "QR Codes");
 
     }
   };
-  xhttp.open("POST", "http://68.183.195.190:8000/getselfpoint", true);
     xhttp.setRequestHeader('Content-Type', 'application/json');
 xhttp.send(JSON.stringify({
     user: document.getElementById("username").value,
@@ -231,16 +232,17 @@ function lmao()
 		{
 			document.getElementById('registerbutton').remove();
 			document.getElementById('loginbutton').remove();
+			loadGet2() 
 
 		}
 		else
 		{
 			document.getElementById('logout').remove();
 		}
+		
 	}
 	else
 	{
-		loadGet2() 
 		document.getElementById('logout').remove();
 	}
 	loadGet()
