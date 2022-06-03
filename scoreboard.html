@@ -152,6 +152,8 @@ function loadGet() {
 		let x = 0
 		for(;x< scoreboardinfo.length-1;x+=2)
 		{
+			if(x > 19)
+				break;
 			document.getElementById(tempuser.concat(((x/2)+1).toString())).innerHTML = scoreboardinfo[x];
 			document.getElementById(point.concat(((x/2)+1).toString())).innerHTML = scoreboardinfo[x+1];
 		}
