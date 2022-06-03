@@ -98,7 +98,7 @@ class getselfpoint(Resource):
         parser.add_argument('user')
         args = parser.parse_args()  # parse arguments to dictionary
         if args['user'] in userdata:    
-            return len(scoredata[args['user']])
+            return len(scoredata[args['user']])-1
         else:
             return 512
     pass
