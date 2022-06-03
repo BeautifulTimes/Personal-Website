@@ -31,7 +31,6 @@ def savedata():
         f.write(str(userdata))
         f.write("\n")
         f.write(str(scoredata))
-        print(str(scoredata))
         f.close() #to change file access modes
 def readsavedata():
     global userdata
