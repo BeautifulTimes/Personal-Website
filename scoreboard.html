@@ -167,6 +167,25 @@ function loadGet() {
   xhttp.send();
 
 }
+function loadGet2() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status != 200) {
+		document.getElementById("test").innerHTML = "You have found".concat(this.status.toString(), "QR Codes");
+
+    }
+	else if(this.readState == 4)
+	{
+		continue;
+	}
+  };
+  xhttp.open("POST", "http://68.183.195.190:8000/getselfpoint", true);
+    xhttp.setRequestHeader('Content-Type', 'application/json');
+xhttp.send(JSON.stringify({
+    user: document.getElementById("username").value,
+
+}));
+}
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -223,7 +242,8 @@ function lmao()
 	}
 	else
 	{
-			document.getElementById('logout').remove();
+		loadGet2() 
+		document.getElementById('logout').remove();
 	}
 	loadGet()
 }
