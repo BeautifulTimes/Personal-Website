@@ -189,7 +189,7 @@ function loadGet2() {
 
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status != 512) {
-		document.getElementById("score").innerHTML = "You have found".concat(this.status.toString(), "QR Codes");
+		document.getElementById("score").innerHTML = "You have found ".concat(this.responseText.toString(), " QR Codes");
 
     }
   };
