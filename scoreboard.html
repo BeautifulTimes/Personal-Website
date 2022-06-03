@@ -135,8 +135,8 @@ li a:hover:not(.active) {
 </table>
 
 </script>
-<div id="loggedin">
-</div>
+<h4 id="score"> </h1>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   lmao();
@@ -171,7 +171,7 @@ function loadGet2() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status != 512) {
-		document.getElementById("loggedin").innerHTML = "You have found".concat(this.status.toString(), "QR Codes");
+		document.getElementById("score").innerHTML = "You have found".concat(this.status.toString(), "QR Codes");
 
     }
   };
