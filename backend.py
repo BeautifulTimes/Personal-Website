@@ -67,9 +67,9 @@ class Users(Resource):
         parser.add_argument('username')
         parser.add_argument('value')
         args = parser.parse_args()  # parse arguments to dictionary
-        print(args['username'])
         if args['username'] in userdata:
             if args['value'] not in scoredata[args['username']]:
+                print(args['username'])
                 scoredata[args['username']][args['value']] = 1
                 scoredata[args['username']]['time'] = time.time() 
             else:
