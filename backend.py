@@ -125,10 +125,23 @@ class register(Resource):
         print(args)
 
     pass
-api.add_resource(Users, '/users')  # '/users' is our entry point
-api.add_resource(login, '/login')  # '/users' is our entry point
-api.add_resource(register, '/register')  # '/users' is our entry point
-api.add_resource(getselfpoint, '/getselfpoint')  # '/users' is our entry point
+class feedback(Resource):
+    def get(self):
+        return userdata , 200
+    def post(self):
+        print('running')
+        parser = reqparse.RequestParser()  # initialize
+        parser.add_argument('feedback')
+        args = parser.parse_args()  # parse arguments to dictionary       
+        print(args['user'])
+        return 200
+
+    pass
+api.add_resource(Users, '/users')  
+api.add_resource(login, '/login') 
+api.add_resource(register, '/register') 
+api.add_resource(getselfpoint, '/getselfpoint') 
+api.add_resource(feedback, '/feedback')  
 
 readsavedata()
 axxx2 = threading.Thread(target=savedata, args=())
