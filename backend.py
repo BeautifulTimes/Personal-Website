@@ -23,7 +23,6 @@ class feedback(Resource):
 
 api.add_resource(feedback, '/feedback')  
 
-readsavedata()
 
 if __name__ == '__main__':
     print("running")
