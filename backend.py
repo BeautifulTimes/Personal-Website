@@ -133,7 +133,7 @@ class feedback(Resource):
         parser = reqparse.RequestParser()  # initialize
         parser.add_argument('feedback')
         args = parser.parse_args()  # parse arguments to dictionary       
-        print(args['user'])
+        print(args['feedback'])
         return 200
 
     pass
