@@ -24,7 +24,7 @@ def saysomething(input,counter):
 
     if "AudioStream" in response:
         numberofmessages[counter] = numberofmessages[counter]+1
-        file = open(str(numberofmessages[counter]) + '_' + str(counter) + 'speech.mp3', 'wb')
+        file = open("sounds/" + str(numberofmessages[counter]) + '_' + str(counter) + 'speech.mp3', 'wb')
         file.write(response['AudioStream'].read())
         file.close()
     else:
@@ -36,7 +36,7 @@ class feedback(Resource):
         global curuser
         global allconversations
         curuser = curuser + 1
-        allconversations.append([{"role": "system", "content": "You are Amy, a certified psychologist and therapist. Respond to me as amy."}])
+        allconversations.append([{"role": "system", "content": "I want you to act as an accredited therapist. I will give you words from the patient and you will respond as a therapist. Your name is amy.Do not use any special escape charchters in your response"}])
         numberofmessages.append(0)
         print(curuser)
         return curuser , 200
