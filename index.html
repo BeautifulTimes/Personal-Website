@@ -1,105 +1,41 @@
 <!DOCTYPE html>
 <html>
 
-<style>
-table, th, td {
-  border:1px solid black;
-}
-input[type=text] {
-  width: auto;
-  padding: 7px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-}
-
-input[type=text]:focus {
-  border: 3px solid #555;
-}
-h1 { font-family: 'Enriqueta', arial, serif; line-height: 1.25; margin: 0 0 10px; font-size: 25px; font-weight: bold; }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-  border-right:1px solid #bbb;
-}
-
-li:last-child {
-  border-right: none;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-li em {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 0px 0px;
-  text-decoration: none;
-  font-size: 14px;
-  
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: #04AA6D;
-}
-
-</style>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
-<h1>GPT-3</h1>
-<hr>
-<p> Small application built with GPT-3 to generate essays, takes up to 10-20 Seconds to generate after button is pressed.</p>
-<label for="feedback">GPT short Essay Generator</label><br>
-<input type="text" id="feedback" name="feedback"><br>
-<div id="login">
-<button type="button" onclick="loginScript()">Get GPT-3 response</button>
-</div>
-<script>
-function loginScript() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "http://68.183.195.190:8000/feedback", true);
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-		document.getElementById("warning").innerHTML =this.responseText;
-		if (this.responseText == 200)
-		{
-			document.getElementById("warning").innerHTML ="Feedback Succesfully submitted";
-		}
-    }
-  };
-  xhttp.setRequestHeader('Content-Type', 'application/json');
-xhttp.send(JSON.stringify({
-    feedback: document.getElementById("feedback").value,
+    <div style="position: absolute; right: 370px; top: 20px; font-size: 18px;">
+        <a href="/" style="text-decoration: none;">
+            <span style="color: var(--custom-color);">1. </span>
+            <span style="color: var(--white-color);">About</span>
+        </a>
+    </div>
+    <div style="position: absolute; right: 260px; top: 20px; font-size: 18px;">
+        <a href="/projects.html" style="text-decoration: none;">
+            <span style="color: var(--custom-color);">2. </span>
+            <span style="color: var(--white-color);">Projects</span>
+        </a>
+    </div>
+    <div style="position: absolute; right: 150px; top: 20px; font-size: 18px;">
+        <a href="/hobbies.html" style="text-decoration: none;">
+            <span style="color: var(--custom-color);">3. </span>
+            <span style="color: var(--white-color);">Hobbies</span>
+        </a>
+    </div>
+    <div style="position: absolute; left: 300px; top: 200px; color: var(--custom-color);font-size: 36px;">Hi, I'm </div>
+    <div style="position: absolute; left: 290px; top: 230px; color: var(--custom-color);font-size: 94px;">Yi Deng</div>
 
-}));
-  };
+    <div class="text-content">
+        I'm a software engineer who's addicted to all things digital. I'm currently studying <br>
+        Computer Science at the University of Waterloo, graduating in the class of 2025. In my <br>
+        spare time, I enjoy creating models in tensorflow, and competing in various programming <br>
+        contests, CTF'S, Chess, and League of Legends. I've been challenger for 4 years in league and recently hit rank 1
+        Check out some of my projects <a href="http://example.com" style="color: var(--custom-color);">here</a>, or 
+        click <a href="http://example.com" style="color: var(--custom-color);">here</a> for more info about me and my hobbies.
+    </div>
 
-</script>
-<div id="demo">
-</div>
-</div>
-<div id="warning">
-</div>
 </body>
+
 </html>
