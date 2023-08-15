@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(14,24,45);
+    --custom-color: rgb(114,194,200);
+    --white-color: rgb(138,146,173);
+}
+
+.text-content {
+    position: absolute;
+    left: 300px;
+    top: 360px;
+    color: var(--white-color);
+    font-size: 21px;
+    max-width: 800px;
+}

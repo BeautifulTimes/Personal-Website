@@ -36,7 +36,7 @@ class feedback(Resource):
         global curuser
         global allconversations
         curuser = curuser + 1
-        allconversations.append([{"role": "system", "content": "I want you to act as an accredited therapist. I will give you words from the patient and you will respond as a therapist. Your name is amy.Do not use any special escape charchters in your response"}])
+        allconversations.append([{"role": "system", "content": "I want you to act as an accredited therapist named Amy. I will give you words from the patient and you will respond as an licensed therapist. Limit your responses to 50 words, and dont use new lines or apostrophes"}])
         numberofmessages.append(0)
         print(curuser)
         return curuser , 200

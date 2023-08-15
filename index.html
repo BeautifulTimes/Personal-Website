@@ -1,111 +1,41 @@
 <!DOCTYPE html>
 <html>
-<title>Chatbot Therapist</title>
-<link href="StyleSheet.css" rel="stylesheet">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body onload="sessionget()">
 
 <body>
-  <audio id="outaudio">
-    <source id = "audioSource" src="sounds/1_0speech.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-<div id="top">
-  <h1 id="title">Chatbot Therapist Demo</h1>
-</div>
+    <div style="position: absolute; right: 370px; top: 20px; font-size: 18px;">
+        <a href="/" style="text-decoration: none;">
+            <span style="color: var(--custom-color);">1. </span>
+            <span style="color: var(--white-color);">About</span>
+        </a>
+    </div>
+    <div style="position: absolute; right: 260px; top: 20px; font-size: 18px;">
+        <a href="/projects.html" style="text-decoration: none;">
+            <span style="color: var(--custom-color);">2. </span>
+            <span style="color: var(--white-color);">Projects</span>
+        </a>
+    </div>
+    <div style="position: absolute; right: 150px; top: 20px; font-size: 18px;">
+        <a href="/hobbies.html" style="text-decoration: none;">
+            <span style="color: var(--custom-color);">3. </span>
+            <span style="color: var(--white-color);">Hobbies</span>
+        </a>
+    </div>
+    <div style="position: absolute; left: 300px; top: 200px; color: var(--custom-color);font-size: 36px;">Hi, I'm </div>
+    <div style="position: absolute; left: 290px; top: 230px; color: var(--custom-color);font-size: 94px;">Yi Deng</div>
 
-<!-- <hr> -->
-<div id="description">
-  <p>Application built with GPT-3.5 to be your therapist!</p>
-  <p for="feedback">Enter what you want to say to the therapist and Amy will respond to you </p>
-</div>
-<div id="conversation" style="overflow:scroll; height:380px;">
-<p id="gptText"> Hi, I'm Amy, your virtual therapist. Is there anything you want to talk about today?</p>
-</div>
-<div id="interactive">
-  <input placeholder="Type here.." id="feedback" name="feedback"></input>
-  <button id="getResponse" type="button" onclick="GetResponse()">Get Response</button>
-</div>
+    <div class="text-content">
+        I'm a software engineer who's addicted to all things digital. I'm currently studying <br>
+        Computer Science at the University of Waterloo, graduating in the class of 2025. In my <br>
+        spare time, I enjoy creating models in tensorflow, and competing in various programming <br>
+        contests, CTF'S, Chess, and League of Legends. I've been challenger for 4 years in league and recently hit rank 1
+        Check out some of my projects <a href="http://example.com" style="color: var(--custom-color);">here</a>, or 
+        click <a href="http://example.com" style="color: var(--custom-color);">here</a> for more info about me and my hobbies.
+    </div>
 
-
-<script>
-var xx = document.getElementById("outaudio"); 
-var index=0;
-var numberofmessages = 0;
-function playAudio() { 
-  var audio = document.getElementById("outaudio");
-  var source = document.getElementById("audioSource");
-  let fileread = "sounds/" + numberofmessages.toString() + "_" + index.toString() + "speech.mp3";
-  var checkExist = setInterval(function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('HEAD', fileread, true);
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        clearInterval(checkExist);
-        source.src = fileread;
-        audio.load();
-        audio.play();
-      }
-    };
-    xhr.send();
-  }, 1000);
-} 
-
-function GetResponse() {
-  numberofmessages++;
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "http://68.183.195.190:8000/feedback", true);
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-    const gptpara = document.createElement("p");
-    // gptpara.innerText = this.responseText ;
-    if (this.responseText.length>0){
-      const newText = this.responseText.substring(1,this.responseText.length-2);
-      gptpara.innerHTML = "<div class=\"container1\"><text id=\"gptText\">"+newText+"</text></div>";
-    } else {
-      gptpara.innerHTML = "<div class=\"container1\"><text id=\"gptText\">"+this.responseText+"</text></div>";
-    }
-    document.getElementById("conversation").appendChild(gptpara);
-    document.getElementById("conversation").scrollTo(0, document.getElementById("conversation").scrollHeight);
-    document.getElementById("getResponse").disabled = false;
-    }
-  };
-  const para = document.createElement("p");
-  // para.innerText = document.getElementById("feedback").value;
-  if (!document.getElementById("feedback").value.length > 0){
-    return;
-  }
-  para.innerHTML = "<div class=\"container2\"><text id=\"userText\">"+document.getElementById("feedback").value+"</text></div>";
-  document.getElementById("conversation").appendChild(para);
-  document.getElementById("conversation").scrollTo(0, document.getElementById("conversation").scrollHeight);
-  document.getElementById("getResponse").disabled = true;
-  xhttp.setRequestHeader('Content-Type', 'application/json');
-  xhttp.send(JSON.stringify({
-    feedback: document.getElementById("feedback").value,
-    userid: index
-  }));
-  document.getElementById("feedback").value="";
-  playAudio();
-
-};
-function sessionget() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "http://68.183.195.190:8000/feedback", true);
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      index = this.responseText
-    }
-  };
-  xhttp.setRequestHeader('Content-Type', 'application/json');
-  xhttp.send();
-};
-</script>
-<div id="demo">
-</div>
-</div>
-<div id="warning">
-</div>
 </body>
+
 </html>
